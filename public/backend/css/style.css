@@ -3927,7 +3927,7 @@ ul {
 /*=============== 6.6 Login Page ==================*/
 
 .login-page-wrap {
-    background-image: url('img/figure/login-bg.jpg');
+    background-image: url('/backend/img/login-bg.jpg');
     background-repeat: no-repeat;
     background-position: top;
     position: fixed;
@@ -3969,7 +3969,6 @@ ul {
     background-color: #ffffff;
     -webkit-box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
-    margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 575px) {
