@@ -26,17 +26,27 @@ class MainController extends Controller
     {
         $student = Student::where('username', $request->username)->first();
         $staff = Staff::where('username', $request->username)->first();
+        if ($staff) {
+            $credentials = $request->only('username', 'password');
 
-        if ($student or $staff) {
-            if (Hash::check($request->password, $staff->password)) {
+            if (Auth::guard('staff')->attempt($credentials)) {
                 $notification = [
                     'message' => 'Xoş Gəlmisiniz ' . $staff->firstname,
                     'alert-type' => 'success'
                 ];
-                return redirect()->route('auth.index')->with($notification);
+                return redirect()->route('staff.index')->with($notification);
             }
-            return redirect()->back()->with('error', 'İstifadəçi adı1 və ya Şifrə yanlışdır');
+            return redirect()->back()->with('error', 'İstifadəçi adı və ya Şifrə yanlışdır');
         }
+
         return redirect()->back()->with('error', 'İstifadəçi adı və ya Şifrə yanlışdır');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('loginFrm');
     }
 }

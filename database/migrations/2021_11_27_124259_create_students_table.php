@@ -24,6 +24,8 @@ class CreateStudentsTable extends Migration
             $table->string('photo')->nullable();
             $table->date('lastLoginDate')->nullable();
             $table->softDeletes();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

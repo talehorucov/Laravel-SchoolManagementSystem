@@ -20,6 +20,12 @@
 <script src="{{ asset('backend/js/Chart.min.js') }}"></script>
 <!-- Custom Js -->
 <script src="{{ asset('backend/js/main.js') }}"></script>
+<!-- Select 2 Js -->
+<script src="{{ asset('backend/js/select2.min.js') }}"></script>
+<!-- Date Picker Js -->
+<script src="{{ asset('backend/js/datepicker.min.js') }}"></script>
+<!-- Smoothscroll Js -->
+<script src="{{ asset('backend/js/jquery.smoothscroll.min.js') }}"></script>
 <!--Toastr -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 

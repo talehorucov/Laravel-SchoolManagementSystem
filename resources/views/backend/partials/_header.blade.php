@@ -42,8 +42,10 @@
                 <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-expanded="false">
                     <div class="admin-title">
-                        <h5 class="item-title">Stevne Zone</h5>
-                        <span>Admin</span>
+                        @if (Auth::guard('staff'))
+                            <h5 class="item-title">{{ Auth::guard('staff')->user()->fullname }}</h5>
+                            {{-- <span>Admin</span> --}}
+                        @endif
                     </div>
                     <div class="admin-img">
                         <img src="{{ asset('backend/img/figure/admin.jpg') }}" alt="Admin">
@@ -51,17 +53,23 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="item-header">
-                        <h6 class="item-title">Steven Zone</h6>
+                        <h6 class="item-title">{{ Auth()->guard('staff')->user()->fullname }}</h6>
                     </div>
                     <div class="item-content">
                         <ul class="settings-list">
-                            <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
+                            <li><a href="{{ route('staff.show') }}"><i class="flaticon-user"></i>Hesabım</a></li>
                             <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
-                            <li><a href="#"><i
-                                        class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a>
+                            <li>
+                                <a href="#">
+                                    <i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message
+                                </a>
                             </li>
                             <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
-                            <li><a href="login.html"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                            @if (Auth::guard('staff'))
+                                <li>
+                                    <a href="{{ route('staff.logout') }}"><i class="flaticon-turn-off"></i>Çıxış</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -179,16 +187,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li class="navbar-item dropdown header-language">
-                <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">English</a>
-                    <a class="dropdown-item" href="#">Spanish</a>
-                    <a class="dropdown-item" href="#">Franchis</a>
-                    <a class="dropdown-item" href="#">Chiness</a>
                 </div>
             </li>
         </ul>

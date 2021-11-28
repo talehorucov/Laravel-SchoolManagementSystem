@@ -16,6 +16,10 @@
 <link rel="stylesheet" href="{{ asset('backend/css/animate.min.css') }}">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
+<!-- Select 2 CSS -->
+<link rel="stylesheet" href="{{ asset('backend/css/select2.min.css') }}">
+<!-- Date Picker CSS -->
+<link rel="stylesheet" href="{{ asset('backend/css/datepicker.min.css') }}">
 <!-- Modernize js -->
 <script src="{{ asset('backend/js/modernizr-3.6.0.min.js') }}"></script>
 <!-- Toastr -->

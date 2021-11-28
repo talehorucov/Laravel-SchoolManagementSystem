@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParentsTable extends Migration
+class CreateStuParentsTable extends Migration
 {
     public function up()
     {
@@ -20,6 +20,8 @@ class CreateParentsTable extends Migration
             $table->string('address')->nullable();
             $table->string('photo')->nullable();
             $table->date('lastLoginDate')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -27,6 +29,6 @@ class CreateParentsTable extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('stu_parents');
     }
 }
