@@ -176,7 +176,11 @@
 	    content: "\f124";
 	}
 
-	.flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler:before {
+	.flaticon-home:before { 
+		content: "\f12e"; 
+	}
+
+	.flaticon-maths-class:before {
 	    content: "\f125";
 	}
 
@@ -218,4 +222,8 @@
 
 	.flaticon-percentage-discount:before {
 	    content: "\f12f";
+	}
+	
+	.flaticon-section:before { 
+		content: "\ff21"; 
 	}

@@ -12,11 +12,6 @@ use App\Http\Requests\Backend\LoginRequest;
 
 class MainController extends Controller
 {
-    public function index()
-    {
-        return view('backend.index');
-    }
-
     public function loginFrm()
     {
         return view('backend.auth.login');

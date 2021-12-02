@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-md header-menu-one bg-light">
     <div class="nav-bar-header-one">
         <div class="header-logo">
-            <a href="index.html">
+            <a href="/staff">
                 <img src="{{ asset('backend/img/logo.png') }}" alt="logo">
             </a>
         </div>
@@ -57,7 +57,9 @@
                     </div>
                     <div class="item-content">
                         <ul class="settings-list">
-                            <li><a href="{{ route('staff.show') }}"><i class="flaticon-user"></i>Hesabım</a></li>
+                            @if (auth()->guard('staff'))
+                                <li><a href="{{ route('staff.account.show',auth()->guard('staff')->id()) }}"><i class="flaticon-user"></i>Hesabım</a></li>
+                            @endif
                             <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
                             <li>
                                 <a href="#">

@@ -29,7 +29,7 @@
                             aria-expanded="false">...</a>
 
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{ route('staff.edit') }}">
+                            <a class="dropdown-item" href="{{ route('staff.account.edit',$staff->id) }}">
                                 <i class="fas fa-cogs text-dark-pastel-green"></i>
                                 Düzəliş Et
                             </a>

@@ -19,7 +19,7 @@ class CreateStaffTable extends Migration
             $table->string('identity_no');
             $table->boolean('gender');
             $table->string('phone');
-            $table->string('address');
+            $table->text('address');
             $table->float('salary')->default(0);
             $table->foreignId('subject_id')->nullable()->constrained();
             $table->string('photo')->nullable();

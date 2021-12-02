@@ -34,6 +34,7 @@
         <!-- Page Area End Here -->
     </div>
     @include('backend.partials._js')
+    @yield('scripts')
 </body>
 
 </html>

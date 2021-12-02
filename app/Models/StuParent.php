@@ -11,6 +11,13 @@ use Laravel\Sanctum\HasApiTokens;
 class StuParent extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    protected $table = 'parents';
+    protected $appends = 'fullname';
+
+    public function getFullnameAttribute()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 
     /**
      * The attributes that are mass assignable.

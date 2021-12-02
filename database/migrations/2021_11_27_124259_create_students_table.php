@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->date('dateOfBirth');
             $table->boolean('gender');
             $table->string('phone')->nullable();
-            $table->string('address')->nullable();
+            $table->text('address')->nullable();
             $table->string('photo')->nullable();
             $table->date('lastLoginDate')->nullable();
             $table->softDeletes();

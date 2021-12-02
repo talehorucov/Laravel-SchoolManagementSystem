@@ -16,8 +16,8 @@ class CreateStuParentsTable extends Migration
             $table->string('email')->nullable();
             $table->string('password');
             $table->boolean('gender');
-            $table->string('phone')->nullable();
-            $table->string('address')->nullable();
+            $table->string('phone');
+            $table->text('address')->nullable();
             $table->string('photo')->nullable();
             $table->date('lastLoginDate')->nullable();
             $table->timestamp('email_verified_at')->nullable();

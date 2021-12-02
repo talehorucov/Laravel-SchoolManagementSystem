@@ -26,6 +26,8 @@
 <script src="{{ asset('backend/js/datepicker.min.js') }}"></script>
 <!-- Smoothscroll Js -->
 <script src="{{ asset('backend/js/jquery.smoothscroll.min.js') }}"></script>
+<!-- DataTable -->
+<script src="{{ asset('backend/js/jquery.dataTables.min.js') }}"></script>
 <!--Toastr -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 

@@ -27,8 +27,9 @@
                     </div>
                     <div class="col-6">
                         <div class="item-content">
-                            <div class="item-title">Students</div>
-                            <div class="item-number"><span class="counter" data-num="150000">1,50,000</span>
+                            <div class="item-title">Şagirdlər</div>
+                            <div class="item-number"><span class="counter"
+                                    data-num="{{ $student_count }}">{{ $student_count }}</span>
                             </div>
                         </div>
                     </div>
@@ -45,8 +46,9 @@
                     </div>
                     <div class="col-6">
                         <div class="item-content">
-                            <div class="item-title">Teachers</div>
-                            <div class="item-number"><span class="counter" data-num="2250">2,250</span></div>
+                            <div class="item-title">Müəllimlər</div>
+                            <div class="item-number"><span class="counter"
+                                    data-num="{{ $staff_count }}">{{ $staff_count }}</span></div>
                         </div>
                     </div>
                 </div>
@@ -62,8 +64,9 @@
                     </div>
                     <div class="col-6">
                         <div class="item-content">
-                            <div class="item-title">Parents</div>
-                            <div class="item-number"><span class="counter" data-num="5690">5,690</span></div>
+                            <div class="item-title">Valideynlər</div>
+                            <div class="item-number"><span class="counter"
+                                    data-num="{{ $parent_count }}">{{ $parent_count }}</span></div>
                         </div>
                     </div>
                 </div>

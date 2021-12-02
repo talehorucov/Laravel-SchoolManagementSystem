@@ -6,83 +6,102 @@
     </div>
     <div class="sidebar-menu-content">
         <ul class="nav nav-sidebar-menu sidebar-toggle-view">
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index3.html" class="nav-link"><i class="fas fa-angle-right"></i>Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index4.html" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index5.html" class="nav-link"><i class="fas fa-angle-right"></i>Teachers</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="student-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Student
-                            Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="admit-form.html" class="nav-link"><i class="fas fa-angle-right"></i>Admission
-                            Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="student-promotion.html" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Student Promotion</a>
-                    </li>
-                </ul>
-            </li>
+            @if (auth()->guard('staff'))
+                <li class="nav-item">
+                    <a href="{{ route('staff.index') }}" class="nav-link"><i class="flaticon-home"></i>
+                        <span>Ana Səhifə</span></a>
+                </li>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Şagirdlər</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('staff.student.index') }}" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>Şagirdlər</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('staff.student.create') }}" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>Yeni Şagird Əlavə Et</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="student-promotion.html" class="nav-link">
+                                <i class="fas fa-angle-right"></i>Student Promotion</a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i
-                        class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                        class="flaticon-multiple-users-silhouette"></i><span>Müəllimlər</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="all-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Teachers</a>
+                        <a href="{{ route('staff.teacher.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Müəllimlər</a>
                     </li>
                     <li class="nav-item">
-                        <a href="teacher-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Teacher
-                            Details</a>
+                        <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Yeni
+                            Müəllim Əlavə Et</a>
                     </li>
                     <li class="nav-item">
-                        <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                            Teacher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="teacher-payment.html" class="nav-link"><i
-                                class="fas fa-angle-right"></i>Payment</a>
+                        <a href="teacher-payment.html" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Payment</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
+                <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Valideynlər</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Parents</a>
+                        <a href="{{ route('staff.parent.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>
+                            Valideynlər</a>
                     </li>
                     <li class="nav-item">
-                        <a href="parents-details.html" class="nav-link"><i class="fas fa-angle-right"></i>Parents
-                            Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="add-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                            Parent</a>
+                        <a href="{{ route('staff.parent.create') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>
+                            Yeni Valideyn Əlavə Et</a>
                     </li>
                 </ul>
             </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-maths-class"></i><span>Siniflər</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.class.index') }}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Siniflər</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.class.create') }}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Yeni Sinif Əlavə Et</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-open-book"></i><span>Fənnlər</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.subject.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Fənnlər</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.subject.create') }}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Yeni Fənn Əlavə Et</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-section"></i><span>Bölmələr</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.section.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Bölmələr</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.section.create') }}" class="nav-link">
+                            <i class="fas fa-angle-right"></i>Yeni Bölmə Əlavə Et</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
                 <ul class="nav sub-group-menu">
@@ -111,24 +130,6 @@
                             Expenses</a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i
-                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                <ul class="nav sub-group-menu">
-                    <li class="nav-item">
-                        <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                            Class</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="all-subject.html" class="nav-link"><i
-                        class="flaticon-open-book"></i><span>Subject</span></a>
             </li>
             <li class="nav-item">
                 <a href="class-routine.html" class="nav-link"><i class="flaticon-calendar"></i><span>Class
