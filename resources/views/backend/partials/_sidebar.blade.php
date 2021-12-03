@@ -34,11 +34,11 @@
                         class="flaticon-multiple-users-silhouette"></i><span>Müəllimlər</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{ route('staff.teacher.index') }}" class="nav-link"><i
+                        <a href="{{ route('staff.staff.index') }}" class="nav-link"><i
                                 class="fas fa-angle-right"></i>Müəllimlər</a>
                     </li>
                     <li class="nav-item">
-                        <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Yeni
+                        <a href="{{ route('staff.staff.create') }}" class="nav-link"><i class="fas fa-angle-right"></i>Yeni
                             Müəllim Əlavə Et</a>
                     </li>
                     <li class="nav-item">

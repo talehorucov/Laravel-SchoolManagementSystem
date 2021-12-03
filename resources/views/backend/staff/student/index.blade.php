@@ -22,15 +22,6 @@
                 <div class="item-title">
                     <h3>Bütün Şagirdlər</h3>
                 </div>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                        aria-expanded="false">...</a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                    </div>
-                </div>
             </div>
             <div class="table-responsive">
                 <table class="table display text-nowrap">
@@ -39,10 +30,8 @@
                             <th>Sıra</th>
                             <th>Ad Soyad</th>
                             <th>İstifadəçi adı</th>
-                            <th>E-poçt</th>
                             <th>Valideyn</th>
                             <th>Sinif</th>
-                            <th>Bölmə</th>
                             <th>Cinsiyyət</th>
                             <th>Dəyişiklik</th>
                         </tr>
@@ -53,14 +42,13 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $student->fullname }}</td>
                                 <td>{{ $student->username }}</td>
-                                <td>{{ $student->email }}</td>
                                 <td>{{ $student->parent->fullname }}</td>
-                                <td>{{ $student->class->name }}</td>
-                                <td>{{ $student->class->section->name }}</td>
+                                <td>{{ $student->class->name }} {{ $student->class->section->name }}</td>
                                 <td>{{ $student->gender == 0 ? 'Oğlan' : 'Qız' }}</td>
                                 <td>
-                                    <a href="/" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="/" class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
+                                    <a href="{{ route('staff.student.edit',$student->username) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('staff.student.show',$student->username) }}" class="btn btn-info"><i class="fas fa-question"></i></a>
+                                    <a href="{{ route('staff.student.destroy',$student->username) }}" class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

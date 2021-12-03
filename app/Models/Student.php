@@ -13,7 +13,24 @@ class Student extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
-    protected $appends = 'fullname';
+    // protected $appends = 'fullname';
+
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'username',
+        'email',
+        'password',
+        'parent_id',
+        'class_id',
+        'dateOfBirth',
+        'gender',
+        'phone',
+        'address',
+        'photo'
+    ];
+    
+    protected $guarded = [];
 
     public function getFullnameAttribute()
     {
@@ -29,12 +46,6 @@ class Student extends Authenticatable
     {
         return $this->belongsTo(StuParent::class);
     }
-
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
     
     protected $hidden = [
         'password',

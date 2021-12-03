@@ -1,5 +1,7 @@
 <!-- jquery-->
 <script src="{{ asset('backend/js/jquery-3.3.1.min.js') }}"></script>
+<!-- sweetalert-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Plugins js -->
 <script src="{{ asset('backend/js/plugins.js') }}"></script>
 <!-- Popper js -->
@@ -52,4 +54,47 @@
         break;
         }
     @endif
+</script>
+
+<script>
+    $(function() {
+        $(document).on('click', '.delete', function(e) {
+            e.preventDefault();
+            var link = $(this).attr("href");
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success ml-1',
+                    cancelButton: 'btn btn-danger mr-1'
+                },
+                buttonsStyling: false
+            })
+            swalWithBootstrapButtons.fire({
+                title: 'Əminsən ?',
+                text: "Sildikən sonra geri qaytarılamaz",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Bəli, Sil !',
+                cancelButtonText: 'Xeyr, Silmə !',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link;
+                    swalWithBootstrapButtons.fire(
+                        'Silindi!',
+                        'Uğurla Silindi',
+                        'success'
+                    )
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                        'Ləğv Edildi!',
+                        'Məlumatlar Güvəndədir! ;)',
+                        'error'
+                    )
+                }
+            })
+        })
+    })
 </script>

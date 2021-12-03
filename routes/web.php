@@ -28,11 +28,21 @@ Route::group([
         Route::get('/', [StudentController::class, 'index'])->name('student.index');
         Route::get('/create', [StudentController::class, 'create'])->name('student.create');
         Route::post('/store', [StudentController::class, 'store'])->name('student.store');
+        Route::get('/edit/{student:username}', [StudentController::class, 'edit'])->name('student.edit');
+        Route::get('/show/{student:username}', [StudentController::class, 'show'])->name('student.show');
+        Route::post('/update/{student}', [StudentController::class, 'update'])->name('student.update');
+        Route::get('/delete/{student:username}', [StudentController::class, 'destroy'])->name('student.destroy');
     });
 
     Route::prefix('teacher')->group(function () {
-        Route::get('/', [TeacherController::class, 'index'])->name('teacher.index');
-        Route::get('/create', [TeacherController::class, 'create'])->name('teacher.create');
+        Route::get('/', [TeacherController::class, 'index'])->name('staff.index');
+        Route::get('/create', [TeacherController::class, 'create'])->name('staff.create');
+        Route::post('/store', [TeacherController::class, 'store'])->name('staff.store');
+        Route::get('/edit/{staff:username}', [TeacherController::class, 'edit'])->name('staff.edit');
+        Route::get('/show/{staff:username}', [TeacherController::class, 'show'])->name('staff.show');
+        Route::post('/update/{staff}', [TeacherController::class, 'update'])->name('staff.update');
+        Route::get('/delete/{staff:username}', [TeacherController::class, 'destroy'])->name('staff.destroy');
+    
     });
 
     Route::prefix('parent')->group(function () {

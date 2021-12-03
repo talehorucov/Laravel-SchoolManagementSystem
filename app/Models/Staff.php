@@ -13,13 +13,18 @@ class Staff extends Authenticatable
 {
     use Notifiable, SoftDeletes;
     protected $guard = 'staff';
-    protected $table = 'staff';
+    protected $table = 'staffs';
 
     public function subject()
     {
         return $this->belongsTo(Subject::class);
     }
-    
+
+    public function getFullnameAttribute()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
     protected $fillable = [
         'name',
         'email',
@@ -34,9 +39,4 @@ class Staff extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function getFullnameAttribute()
-    {
-        return $this->firstname . ' ' . $this->lastname;
-    }
 }
