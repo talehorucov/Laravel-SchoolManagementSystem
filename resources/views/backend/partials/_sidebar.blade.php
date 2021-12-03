@@ -66,11 +66,11 @@
                 <a href="#" class="nav-link"><i class="flaticon-maths-class"></i><span>Siniflər</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="{{ route('staff.class.index') }}" class="nav-link">
+                        <a href="{{ route('staff.grade.index') }}" class="nav-link">
                             <i class="fas fa-angle-right"></i>Siniflər</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('staff.class.create') }}" class="nav-link">
+                        <a href="{{ route('staff.grade.create') }}" class="nav-link">
                             <i class="fas fa-angle-right"></i>Yeni Sinif Əlavə Et</a>
                     </li>
                 </ul>

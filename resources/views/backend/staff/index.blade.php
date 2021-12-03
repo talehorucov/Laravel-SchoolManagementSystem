@@ -29,7 +29,7 @@
                         <div class="item-content">
                             <div class="item-title">Şagirdlər</div>
                             <div class="item-number"><span class="counter"
-                                    data-num="{{ $student_count }}">{{ $student_count }}</span>
+                                    data-num="{{ $students->count() }}">{{ $students->count() }}</span>
                             </div>
                         </div>
                     </div>

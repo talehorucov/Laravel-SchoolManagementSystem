@@ -22,7 +22,7 @@ class Student extends Authenticatable
         'email',
         'password',
         'parent_id',
-        'class_id',
+        'grade_id',
         'dateOfBirth',
         'gender',
         'phone',
@@ -37,9 +37,9 @@ class Student extends Authenticatable
         return $this->firstname . ' ' . $this->lastname;
     }
 
-    public function class()
+    public function grade()
     {
-        return $this->belongsTo(SClass::class);
+        return $this->belongsTo(Grade::class);
     }
 
     public function parent()

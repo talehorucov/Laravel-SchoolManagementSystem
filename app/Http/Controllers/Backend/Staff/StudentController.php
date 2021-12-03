@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Staff;
 
-use App\Models\SClass;
+use App\Models\Grade;
 use App\Models\Student;
 use App\Models\StuParent;
 use App\Models\Stustudent;
@@ -25,8 +25,8 @@ class StudentController extends Controller
     public function create()
     {
         $parents = StuParent::get();
-        $classes = SClass::get();
-        return view('backend.staff.student.store', compact('parents', 'classes'));
+        $grades = Grade::get();
+        return view('backend.staff.student.store', compact('parents', 'grades'));
     }
 
     public function store(StudentStoreRequest $request)
@@ -51,7 +51,7 @@ class StudentController extends Controller
         $student->phone = $request->phone;
         $student->address = $request->address;
         $student->parent_id = $request->parent_id;
-        $student->class_id = $request->class_id;
+        $student->grade_id = $request->grade_id;
         $student->save();
 
         $notification = [
@@ -64,8 +64,8 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         $parents = StuParent::get();
-        $classes = SClass::get();
-        return view('backend.staff.student.edit', compact('student', 'parents', 'classes'));
+        $grades = Grade::get();
+        return view('backend.staff.student.edit', compact('student', 'parents', 'grades'));
     }
 
     public function update(StudentUpdateRequest $request, Student $student)
@@ -102,7 +102,7 @@ class StudentController extends Controller
         $student->phone = $request->phone;
         $student->address = $request->address;
         $student->parent_id = $request->parent_id;
-        $student->class_id = $request->class_id;
+        $student->grade_id = $request->grade_id;
         $student->save();
 
         $notification = [

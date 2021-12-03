@@ -40,7 +40,7 @@
             </div>
             <div class="single-info-details">
                 <div class="item-img">
-                    <img src="{{ asset('backend/img/figure/teacher.jpg') }}" alt="teacher">
+                    <img src="{{ asset(Auth()->guard('staff')->user()->photo) }}" alt="teacher">
                 </div>
                 <div class="item-content">
                     <div class="header-inline item-header">

@@ -24,7 +24,7 @@ class StudentUpdateRequest extends FormRequest
             'phone' => 'nullable|min:10:|max:50',
             'address' => 'nullable|',
             'photo' => 'nullable|image|mimes:jpg,png,jpeg|max:3072',
-            'class_id' => 'nullable|exists:classes,id',
+            'grade_id' => 'nullable|exists:grades,id',
             'parent_id' => 'required|exists:parents,id',
         ];
     }
@@ -42,7 +42,7 @@ class StudentUpdateRequest extends FormRequest
             'phone' => 'Əlaqə Nömrəsi',
             'address' => 'Ünvan',
             'photo' => 'Şəkil',
-            'class_id' => 'Sinif',
+            'grade_id' => 'Sinif',
             'parent_id' => 'Valideyn',
         ];
     }

@@ -50,42 +50,50 @@
                 </div>
             </form>
             <div class="table-responsive">
-                <table class="table display data-table text-nowrap">
+                <table class="table display text-nowrap">
                     <thead>
                         <tr>
-                            <th>Sıra</th>
-                            <th>Fənn</th>
-                            <th>Dəyişiklik</th>
+                            <th style="width: 30%">Sıra</th>
+                            <th style="width: 40%">Fənn</th>
+                            <th style="width: 20%">Dəyişiklik</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="subject">
                         @foreach ($subjects as $subject)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $subject->name }}</td>
                             <td>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <span class="flaticon-more-button-of-three-dots"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-times text-orange-red"></i>Close</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                    </div>
-                                </div>
+                                <a href="{{ route('staff.subject.edit', $subject) }}"
+                                    class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{ route('staff.subject.show', $subject) }}"
+                                    class="btn btn-info"><i class="fas fa-question"></i></a>
+                                <a href="{{ route('staff.subject.destroy', $subject) }}"
+                                    class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
+            <div class="pagination">
+
+            </div>
         </div>
     </div>
     <!-- All Subjects Area End Here -->
     @include('backend.partials._footer')
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('backend/js/jPages.min.js') }}"></script>
+<script>
+    $(".pagination").jPages({
+        containerID: "subject",
+        perPage: 10,
+        previous: 'Əvvəlki',
+        next: 'Sonraki'
+    });
+</script>
 @endsection

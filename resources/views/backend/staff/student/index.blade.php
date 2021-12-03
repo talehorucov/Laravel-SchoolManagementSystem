@@ -43,7 +43,7 @@
                                 <td>{{ $student->fullname }}</td>
                                 <td>{{ $student->username }}</td>
                                 <td>{{ $student->parent->fullname }}</td>
-                                <td>{{ $student->class->name }} {{ $student->class->section->name }}</td>
+                                <td>{{ $student->grade->name }} {{ $student->grade->section->name }}</td>
                                 <td>{{ $student->gender == 0 ? 'Oğlan' : 'Qız' }}</td>
                                 <td>
                                     <a href="{{ route('staff.student.edit',$student->username) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>

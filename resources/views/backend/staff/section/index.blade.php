@@ -52,9 +52,9 @@
                 <table class="table display text-nowrap">
                     <thead>
                         <tr>
-                            <th>Sıra</th>
-                            <th>Bölmə</th>
-                            <th>Dəyişiklik</th>
+                            <th style="width: 30%">Sıra</th>
+                            <th style="width: 40%">Bölmə</th>
+                            <th style="width: 20%">Dəyişiklik</th>
                         </tr>
                     </thead>
                     <tbody id="section">
@@ -63,20 +63,12 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $section->name }}</td>
                                 <td>
-                                    <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                            aria-expanded="false">
-                                            <span class="flaticon-more-button-of-three-dots"></span>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-times text-orange-red"></i>Close</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                            <a class="dropdown-item" href="#"><i
-                                                    class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('staff.section.edit', $section) }}" class="btn btn-primary"><i
+                                            class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('staff.section.show', $section) }}" class="btn btn-info"><i
+                                            class="fas fa-question"></i></a>
+                                    <a href="{{ route('staff.section.destroy', $section) }}"
+                                        class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -98,7 +90,7 @@
 <script>
     $(".pagination").jPages({
         containerID: "section",
-        perPage: 1,
+        perPage: 10,
         previous: 'Əvvəlki',
         next: 'Sonraki'
     });

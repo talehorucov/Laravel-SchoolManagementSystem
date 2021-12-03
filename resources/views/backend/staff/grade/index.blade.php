@@ -49,44 +49,52 @@
                 </div>
             </form>
             <div class="table-responsive">
-                <table class="table display data-table text-nowrap">
+                <table class="table display text-nowrap">
                     <thead>
                         <tr>
-                            <th>Sıra</th>
-                            <th>Sinif</th>
-                            <th>Bölüm</th>
-                            <th>Dəyişiklik</th>
+                            <th style="width: 20%">Sıra</th>
+                            <th style="width: 30%">Sinif</th>
+                            <th style="width: 30%">Bölüm</th>
+                            <th style="width: 20%">Dəyişiklik</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($classes as $class)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $class->name }}</td>
-                            <td>{{ $class->section->name }}</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <span class="flaticon-more-button-of-three-dots"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-times text-orange-red"></i>Close</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                    <tbody id="grades">
+                        @foreach ($grades as $grade)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $grade->name }}</td>
+                                <td>{{ $grade->section->name }}</td>
+                                <td>
+                                    <a href="{{ route('staff.grade.edit', $grade) }}"
+                                        class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="{{ route('staff.grade.show', $grade) }}"
+                                        class="btn btn-info"><i class="fas fa-question"></i></a>
+                                    <a href="{{ route('staff.grade.destroy', $grade) }}"
+                                        class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="pagination">
+
             </div>
         </div>
     </div>
     <!-- Student Table Area End Here -->
     @include('backend.partials._footer')
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('backend/js/jPages.min.js') }}"></script>
+<script>
+    $(".pagination").jPages({
+        containerID: "grades",
+        perPage: 10,
+        previous: 'Əvvəlki',
+        next: 'Sonraki'
+    });
+</script>
 @endsection

@@ -122,14 +122,14 @@
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
                         <label>Sinif</label>
-                        <select class="select2" name="class_id">
+                        <select class="select2" name="grade_id">
                             <option value="">Sinif Seçin *</option>
-                            @foreach ($classes as $class)
-                                <option {{ $student->class_id == $class->id ? 'selected' : '' }}
-                                    value="{{ $class->id }}">{{ $class->name }} {{ $class->section->name }}</option>
+                            @foreach ($grades as $grade)
+                                <option {{ $student->grade_id == $grade->id ? 'selected' : '' }}
+                                    value="{{ $grade->id }}">{{ $grade->name }} {{ $grade->section->name }}</option>
                             @endforeach
                         </select>
-                        @error('class_id')
+                        @error('grade_id')
                             <span class="text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

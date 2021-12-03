@@ -71,8 +71,8 @@
                     </div>
                     <div class="col-xl-4 col-lg-6 col-12 form-group">
                         <label>Sinif</label>
-                        <select disabled class="select2" name="class_id">
-                            <option>{{ $student->class->name }} {{ $student->class->section->name }}</option>
+                        <select disabled class="select2" name="grade_id">
+                            <option>{{ $student->grade->name }} {{ $student->grade->section->name }}</option>
                         </select>
                     </div>
                     <div class="col-lg-4 col-12 form-group">

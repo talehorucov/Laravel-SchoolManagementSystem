@@ -12,10 +12,10 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $student_count = Student::count();
+        $students = Student::get();
         $staff_count = Staff::count();
         $parent_count = StuParent::count();
-        return view('backend.staff.index',compact('student_count','staff_count','parent_count'));
+        return view('backend.staff.index',compact('students','staff_count','parent_count'));
     }
 
     public function show(Staff $staff)

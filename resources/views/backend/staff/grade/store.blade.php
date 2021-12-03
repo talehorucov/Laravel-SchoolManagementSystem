@@ -23,7 +23,7 @@
                     <h3>Yeni Sinif Əlavə Et</h3>
                 </div>
             </div>
-            <form class="new-added-form" method="POST" action="{{ route('staff.class.store') }}">
+            <form class="new-added-form" method="POST" action="{{ route('staff.grade.store') }}">
                 @csrf
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-12 form-group">

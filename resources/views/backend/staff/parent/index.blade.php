@@ -70,19 +70,9 @@ Valideynlər
                             <td>{{ $parent->email }}</td>
                             <td>{{ $parent->gender == 0 ? 'Kişi' : 'Qadın'}}</td>
                             <td>
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <span class="flaticon-more-button-of-three-dots"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-times text-orange-red"></i>Close</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                    </div>
-                                </div>
+                                <a href="{{ route('staff.parent.edit',$parent->username) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{ route('staff.parent.show',$parent->username) }}" class="btn btn-info"><i class="fas fa-question"></i></a>
+                                <a href="{{ route('staff.parent.destroy',$parent->username) }}" class="btn btn-danger delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach
