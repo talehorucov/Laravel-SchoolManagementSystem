@@ -82,6 +82,16 @@ Route::group([
         Route::get('/show/{section}', [SectionController::class, 'show'])->name('section.show');
         Route::post('/update/{section}', [SectionController::class, 'update'])->name('section.update');
         Route::get('/delete/{section}', [SectionController::class, 'destroy'])->name('section.destroy');
+    });    
+
+    Route::prefix('section')->group(function () {
+        Route::get('/', [SectionController::class, 'index'])->name('section.index');
+        Route::get('/create', [SectionController::class, 'create'])->name('section.create');
+        Route::post('/store', [SectionController::class, 'store'])->name('section.store');
+        Route::get('/edit/{section}', [SectionController::class, 'edit'])->name('section.edit');
+        Route::get('/show/{section}', [SectionController::class, 'show'])->name('section.show');
+        Route::post('/update/{section}', [SectionController::class, 'update'])->name('section.update');
+        Route::get('/delete/{section}', [SectionController::class, 'destroy'])->name('section.destroy');
     });
 });
 

@@ -38,7 +38,8 @@
                                 class="fas fa-angle-right"></i>Müəllimlər</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('staff.staff.create') }}" class="nav-link"><i class="fas fa-angle-right"></i>Yeni
+                        <a href="{{ route('staff.staff.create') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Yeni
                             Müəllim Əlavə Et</a>
                     </li>
                     <li class="nav-item">
@@ -103,11 +104,11 @@
             </li>
 
             <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Library</span></a>
+                <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Kitabxana</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>All
-                            Book</a>
+                        <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Bütün
+                            Kitablar</a>
                     </li>
                     <li class="nav-item">
                         <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
