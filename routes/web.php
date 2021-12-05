@@ -3,6 +3,10 @@
 use App\Http\Controllers\Backend\MainController;
 use App\Http\Controllers\Backend\Staff\GradeController;
 use App\Http\Controllers\Backend\Staff\IndexController;
+use App\Http\Controllers\Backend\Staff\Library\AuthorController;
+use App\Http\Controllers\Backend\Staff\Library\BookController;
+use App\Http\Controllers\Backend\Staff\Library\CategoryController;
+use App\Http\Controllers\Backend\Staff\Library\LanguageController;
 use App\Http\Controllers\Backend\Staff\ParentController;
 use App\Http\Controllers\Backend\Staff\SectionController;
 use App\Http\Controllers\Backend\Staff\StudentController;
@@ -82,7 +86,7 @@ Route::group([
         Route::get('/show/{section}', [SectionController::class, 'show'])->name('section.show');
         Route::post('/update/{section}', [SectionController::class, 'update'])->name('section.update');
         Route::get('/delete/{section}', [SectionController::class, 'destroy'])->name('section.destroy');
-    });    
+    });
 
     Route::prefix('section')->group(function () {
         Route::get('/', [SectionController::class, 'index'])->name('section.index');
@@ -92,6 +96,48 @@ Route::group([
         Route::get('/show/{section}', [SectionController::class, 'show'])->name('section.show');
         Route::post('/update/{section}', [SectionController::class, 'update'])->name('section.update');
         Route::get('/delete/{section}', [SectionController::class, 'destroy'])->name('section.destroy');
+    });
+
+    Route::group(['prefix' => 'library', 'as' => 'library.'], function () {
+        Route::group(['prefix' => 'book', 'as' => 'book.'], function () {
+            Route::get('/', [BookController::class, 'index'])->name('index');
+            Route::get('/create', [BookController::class, 'create'])->name('create');
+            Route::post('/store', [BookController::class, 'store'])->name('store');
+            Route::get('/edit/{book:slug}', [BookController::class, 'edit'])->name('edit');
+            Route::get('/show/{book:slug}', [BookController::class, 'show'])->name('show');
+            Route::post('/update/{book:slug}', [BookController::class, 'update'])->name('update');
+            Route::get('/delete/{book:slug}', [BookController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::group(['prefix' => 'author', 'as' => 'author.'], function () {
+            Route::get('/', [AuthorController::class, 'index'])->name('index');
+            Route::get('/create', [AuthorController::class, 'create'])->name('create');
+            Route::post('/store', [AuthorController::class, 'store'])->name('store');
+            Route::get('/edit/{author}', [AuthorController::class, 'edit'])->name('edit');
+            Route::get('/show/{author}', [AuthorController::class, 'show'])->name('show');
+            Route::post('/update/{author}', [AuthorController::class, 'update'])->name('update');
+            Route::get('/delete/{author}', [AuthorController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::group(['prefix' => 'language', 'as' => 'language.'], function () {
+            Route::get('/', [LanguageController::class, 'index'])->name('index');
+            Route::get('/create', [LanguageController::class, 'create'])->name('create');
+            Route::post('/store', [LanguageController::class, 'store'])->name('store');
+            Route::get('/edit/{language}', [LanguageController::class, 'edit'])->name('edit');
+            Route::get('/show/{language}', [LanguageController::class, 'show'])->name('show');
+            Route::post('/update/{language}', [LanguageController::class, 'update'])->name('update');
+            Route::get('/delete/{language}', [LanguageController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('index');
+            Route::get('/create', [CategoryController::class, 'create'])->name('create');
+            Route::post('/store', [CategoryController::class, 'store'])->name('store');
+            Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('edit');
+            Route::get('/show/{category}', [CategoryController::class, 'show'])->name('show');
+            Route::post('/update/{category}', [CategoryController::class, 'update'])->name('update');
+            Route::get('/delete/{category}', [CategoryController::class, 'destroy'])->name('destroy');
+        });
     });
 });
 

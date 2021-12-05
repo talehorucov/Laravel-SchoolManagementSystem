@@ -1668,6 +1668,67 @@ h6 {
     display: none;
 }
 
+.breadcrumbs-area-create {
+    padding: 34px 0 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumbs-area-create h3 {
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.breadcrumbs-area-create ul li {
+    display: inline-block;
+    color: #fea801;
+    font-size: 16px;
+    position: relative;
+    margin-right: 15px;
+    padding-right: 10px;
+}
+
+.breadcrumbs-area-create ul li:before {
+    content: "\f107";
+    font-family: Flaticon;
+    position: absolute;
+    font-size: 10px;
+    font-weight: 600;
+    right: -10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 5;
+    color: #fea801;
+}
+
+.breadcrumbs-area-create ul li a {
+    color: #646464;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.breadcrumbs-area-create ul li a:hover {
+    color: #fea801;
+}
+
+.breadcrumbs-area-create ul li:last-child {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.breadcrumbs-area-create ul li:last-child:before {
+    display: none;
+}
+
 #preloader {
     background: #ffffff url('img/preloader.gif') no-repeat scroll center center;
     height: 100%;
@@ -5163,6 +5224,10 @@ ul {
 
 .btn-gradient-yellow {
     background-color: #ffae01;
+}
+
+.btn-gradient-green {
+    background-color: green;
 }
 
 .gradient-dodger-blue {

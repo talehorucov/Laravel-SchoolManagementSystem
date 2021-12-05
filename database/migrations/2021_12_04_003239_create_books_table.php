@@ -14,9 +14,10 @@ class CreateBooksTable extends Migration
             $table->foreignId('author_id')->constrained();
             $table->foreignId('book_language_id')->constrained();
             $table->smallInteger('page');
-            $table->boolean('isAvailable')->default(1);
+            $table->boolean('isAvailable')->default(false);
             $table->string('cover_photo');
-            $table->softDeletes();
+            $table->string('pdf');
+            $table->text('slug');
             $table->timestamps();
         });
     }

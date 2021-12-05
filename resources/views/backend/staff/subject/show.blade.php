@@ -7,7 +7,7 @@
 <div class="dashboard-content-one">
     <!-- Breadcubs Area Start Here -->
     <div class="breadcrumbs-area">
-        <h3>Valideyn</h3>
+        <h3>Yazar</h3>
         <ul>
             <li>
                 <a href="/">Ana Səhifə</a>

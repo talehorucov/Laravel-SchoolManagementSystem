@@ -107,12 +107,19 @@
                 <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Kitabxana</span></a>
                 <ul class="nav sub-group-menu">
                     <li class="nav-item">
-                        <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Bütün
-                            Kitablar</a>
+                        <a href="{{ route('staff.library.book.index') }}" class="nav-link"><i class="fas fa-angle-right"></i>Kitablar</a>
                     </li>
                     <li class="nav-item">
-                        <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                            Book</a>
+                        <a href="{{ route('staff.library.author.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Yazarlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.library.language.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Dillər</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.library.category.index') }}" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Janrlar</a>
                     </li>
                 </ul>
             </li>

@@ -46,7 +46,7 @@ class SectionController extends Controller
         $section->save();
 
         $notification = [
-            'message' => 'Bölmə uğurla redaktə əlavə edild',
+            'message' => 'Bölmə uğurla redaktə əlavə edildi',
             'alert-type' => 'success'
         ];
 

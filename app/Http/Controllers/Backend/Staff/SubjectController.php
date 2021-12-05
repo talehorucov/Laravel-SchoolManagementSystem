@@ -46,7 +46,7 @@ class SubjectController extends Controller
         $subject->save();
 
         $notification = [
-            'message' => 'Fənn uğurla redaktə əlavə edild',
+            'message' => 'Fənn uğurla redaktə əlavə edildi',
             'alert-type' => 'success'
         ];
 

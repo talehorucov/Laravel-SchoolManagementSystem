@@ -1,7 +1,7 @@
 @extends('backend.main_master')
 @section('content')
 @section('title')
-    {{ $section->name }} Haqqında Məlumat
+    {{ $author->fullname }} Haqqında Məlumat
 @endsection
 
 <div class="dashboard-content-one">
@@ -12,7 +12,7 @@
             <li>
                 <a href="/">Ana Səhifə</a>
             </li>
-            <li>{{ $section->name }} Haqqında Məlumat</li>
+            <li>{{ $author->fullname }} Haqqında Məlumat</li>
         </ul>
     </div>
     <!-- Breadcubs Area End Here -->
@@ -21,14 +21,14 @@
         <div class="card-body">
             <div class="heading-layout1">
                 <div class="item-title">
-                    <li>{{ $section->name }} Haqqında Məlumat</li>
+                    <h3>{{ $author->fullname }} Haqqında Məlumat</h3> 
                 </div>
             </div>
             <form class="new-added-form">
                 <div class="row">
                     <div class="col-xl-12 col-lg-6 col-12 form-group">
-                        <label>Bölüm *</label>
-                        <input type="text" class="form-control" value="{{ $section->name }}" disabled>
+                        <label>Yazar *</label>
+                        <input type="text" class="form-control" value="{{ $author->fullname }}" disabled>
                     </div>
                 </div>
             </form>
